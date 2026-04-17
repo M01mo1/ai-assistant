@@ -1,0 +1,71 @@
+package com.haigui.ai.assistant.model.dto;
+
+import com.haigui.ai.assistant.model.entity.KnowledgeSource;
+import com.haigui.ai.assistant.model.entity.ToolInvocation;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+/**
+ * 对话响应DTO
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ChatResponse {
+    
+    /**
+     * 会话ID
+     */
+    private String sessionId;
+    
+    /**
+     * 消息ID
+     */
+    private String messageId;
+    
+    /**
+     * AI回复内容
+     */
+    private String content;
+    
+    /**
+     * 响应时间
+     */
+    private LocalDateTime responseTime;
+    
+    /**
+     * 知识来源列表（用于溯源）
+     */
+    private List<KnowledgeSource> knowledgeSources;
+    
+    /**
+     * 工具调用记录
+     */
+    private List<ToolInvocation> toolInvocations;
+    
+    /**
+     * Token消耗
+     */
+    private Integer tokenUsage;
+    
+    /**
+     * 诊断结果（如有）
+     */
+    private DiagnosisResult diagnosisResult;
+    
+    /**
+     * 是否成功
+     */
+    private Boolean success;
+    
+    /**
+     * 错误信息
+     */
+    private String errorMessage;
+}

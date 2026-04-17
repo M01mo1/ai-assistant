@@ -1,0 +1,215 @@
+// 主色调
+$primary-color: #409eff;
+$success-color: #67c23a;
+$warning-color: #e6a23c;
+$danger-color: #f56c6c;
+$info-color: #909399;
+
+// 文字颜色
+$text-primary: #303133;
+$text-regular: #606266;
+$text-secondary: #909399;
+$text-placeholder: #c0c4cc;
+
+// 背景颜色
+$bg-color: #f5f7fa;
+$bg-color-light: #fafafa;
+$bg-color-white: #ffffff;
+
+// 边框颜色
+$border-color: #dcdfe6;
+$border-color-light: #e4e7ed;
+
+// 全局样式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: $text-primary;
+  background-color: $bg-color;
+}
+
+#app {
+  height: 100%;
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c4cc;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #909399;
+}
+
+// 通用卡片样式
+.card {
+  background: $bg-color-white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+// 页面标题
+.page-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 20px;
+}
+
+// 空状态
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: $text-secondary;
+  
+  .el-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: $text-placeholder;
+  }
+  
+  p {
+    font-size: 14px;
+  }
+}
+
+// 加载状态
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+// 操作按钮组
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+// 标签样式
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+// Markdown内容样式
+.markdown-content {
+  line-height: 1.8;
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 16px 0 8px;
+    font-weight: 600;
+  }
+  
+  p {
+    margin: 8px 0;
+  }
+  
+  ul, ol {
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+  
+  li {
+    margin: 4px 0;
+  }
+  
+  code {
+    background: #f5f7fa;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Monaco, Consolas, 'Courier New', monospace;
+    font-size: 13px;
+  }
+  
+  pre {
+    background: #f5f7fa;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 12px 0;
+    
+    code {
+      background: transparent;
+      padding: 0;
+    }
+  }
+  
+  blockquote {
+    border-left: 4px solid $primary-color;
+    padding-left: 12px;
+    margin: 12px 0;
+    color: $text-secondary;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    
+    th, td {
+      border: 1px solid $border-color;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    
+    th {
+      background: $bg-color;
+    }
+  }
+  
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// 动画
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}

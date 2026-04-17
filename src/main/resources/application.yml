@@ -1,0 +1,62 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ai_customer_service_assistant
+  # MongoDB?? - ????????
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/customer_memory
+
+langchain4j:
+  # ??????
+  community:
+    dashscope:
+      chat-model:
+        api-key: ${DASH_SCOPE_API_KEY}
+        model-name: qwen-max
+        temperature: 0.1  # ????????????
+        max-tokens: 2000
+      embedding-model: # ????????
+        api-key: ${DASH_SCOPE_API_KEY}
+        model-name: text-embedding-v3
+      streaming-chat-model: # ?????????
+        api-key: ${DASH_SCOPE_API_KEY}
+        model-name: qwen3-max
+
+
+
+
+# Milvus???????
+milvus:
+  host: ${MILVUS_HOST:localhost}
+  port: ${MILVUS_PORT:19530}
+  collection-name: customer_service_assistant_knowledge_base
+  dimension: 1024
+
+# ??API??
+feishu:
+  app-id: ${FEISHU_APP_ID:cli_a950bbd5acf81cb5}
+  # cli_a950bbd5acf81cb5
+  app-secret: ${FEISHU_APP_SECRET:fc5gqwJwJdKHzQJsa6XwshVAwUEbVJfu}
+  # fc5gqwJwJdKHzQJsa6XwshVAwUEbVJfu
+  base-url: https://open.feishu.cn/open-apis
+
+# ?????
+knowledge:
+  # ??????
+  chunk:
+    size: 500
+    overlap: 50
+  # ????
+  retrieval:
+    top-k: 5
+    min-score: 0.7
+
+# ????
+logging:
+  level:
+    com.com.haigui: DEBUG
+    dev.langchain4j: DEBUG
+

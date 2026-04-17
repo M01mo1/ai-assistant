@@ -1,0 +1,10 @@
+# 后端
+target/
+*.jar
+
+# 前端
+node_modules/
+dist/
+
+# 通用
+*.log
